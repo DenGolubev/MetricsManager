@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace MetricsManager.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/metrics/network")]
     [ApiController]
     public class NetworkMetricsController : ControllerBase
     {
+        [HttpGet("from/{fromTime}/to/{toTime}")]
+        public IActionResult GetNetworkMetricsFromAgent([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        {
+            return Ok();
+        }
     }
 }

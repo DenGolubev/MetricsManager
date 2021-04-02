@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace MetricsManager.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/metrics/hdd")]
     [ApiController]
     public class HddMetricsController : ControllerBase
     {
+        [HttpGet("agent/{agentId}/{FreePhysicalMemory}")]
+        public IActionResult GetFreeHddSize([FromRoute] int agentId, [FromRoute] int freefhysicalmemory)
+        {
+            return Ok();
+        }
     }
 }

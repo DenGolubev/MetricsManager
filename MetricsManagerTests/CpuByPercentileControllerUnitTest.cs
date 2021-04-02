@@ -1,14 +1,14 @@
-using MetricsManager.Controllers;
+﻿using MetricsManager.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Xunit;
 
 namespace MetricsManagerTests
 {
-    public class CpuControllerUnitTests
+    public class CpuByPercentileControllerUnitTest
     {
         private CpuMetricsController controller;
-        public CpuControllerUnitTests()
+        public CpuByPercentileControllerUnitTest()
         {
             controller = new CpuMetricsController();
         }
@@ -23,12 +23,10 @@ namespace MetricsManagerTests
             var toTime = TimeSpan.FromSeconds(100);
 
             //Act
-            var result = controller.GetMetricsCPUFromAgent(agentId, fromTime, toTime);
-            var result1 = controller.GetMetricsByPercentileCPUFromAgent(agentId, fromTime, toTime);
+            var result = controller.GetMetricsByPercentileCPUFromAgent(agentId, fromTime, toTime);
             // Assert
             _ = Assert.IsAssignableFrom<IActionResult>(result);
-            _ = Assert.IsAssignableFrom<IActionResult>(result1);
-
+            
         }
     }
 }

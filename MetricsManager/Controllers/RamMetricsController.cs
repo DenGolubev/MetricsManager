@@ -1,15 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Management;
 
 namespace MetricsManager.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/metrics/ram")]
     [ApiController]
     public class RamMetricsController : ControllerBase
     {
+        [HttpGet("agent/{FreePhysicalMemory}")]
+
+        public IActionResult GetTotalMemory ([FromRoute] int freefhysicalmemory)
+        {
+            return Ok();
+        }
     }
 }

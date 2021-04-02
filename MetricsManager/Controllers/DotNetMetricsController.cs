@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace MetricsManager.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/metrics/dotnet")]
     [ApiController]
     public class DotNetMetricsController : ControllerBase
     {
+        public IActionResult GetMetricsDotNetFromAgent(TimeSpan fromTime, TimeSpan toTime)
+        {
+            return Ok();
+        }
     }
 }
